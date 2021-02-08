@@ -1,155 +1,332 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(167, 255, 255);
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(167, 255, 255);
 }
-.emoji {   
-    width: var(--emoji-size);
-    height: var(--emoji-size);
-    background: rgb(255,204,51);
-    background: -moz-radial-gradient(circle, rgba(255,204,51,1) 0%, rgba(255,204,51,1) 50%, rgba(201,137,23,1) 90%, rgba(124,85,16,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(255,204,51,1) 0%, rgba(255,204,51,1) 50%, rgba(201,137,23,1) 90%, rgba(124,85,16,1) 100%);
-    background: radial-gradient(circle, rgba(255,204,51,1) 0%, rgba(255,204,51,1) 50%, rgba(201,137,23,1) 90%, rgba(124,85,16,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcc33",endColorstr="#7c5510",GradientType=1);
-    border-radius: 50%;
-    border: calc(var(--emoji-size) * .01) solid  black; 
-    animation: emoji-rotate 8s var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards ;
-   
+.emoji {
+  width: var(--emoji-size);
+  height: var(--emoji-size);
+  background: rgb(255, 204, 51);
+  background: -o-radial-gradient(
+    circle,
+    rgba(255, 204, 51, 1) 0%,
+    rgba(255, 204, 51, 1) 50%,
+    rgba(201, 137, 23, 1) 90%,
+    rgba(124, 85, 16, 1) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(255, 204, 51, 1) 0%,
+    rgba(255, 204, 51, 1) 50%,
+    rgba(201, 137, 23, 1) 90%,
+    rgba(124, 85, 16, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcc33",endColorstr="#7c5510",GradientType=1);
+  border-radius: 50%;
+  border: calc(var(--emoji-size) * 0.01) solid black;
+  -webkit-animation: emoji-rotate 8s var(--emoji-animaton-mode)
+    var(--emoji-animation-iteration-count) forwards;
+  animation: emoji-rotate 8s var(--emoji-animaton-mode)
+    var(--emoji-animation-iteration-count) forwards;
 
-    --emoji-size: 400px;
-    --emoji-animaton-duration: 2s;
-    --emoji-animaton-mode: ease-in-out;
-    --emoji-animation-iteration-count: infinite;
+  --emoji-size: 400px;
+  --emoji-animaton-duration: 2s;
+  --emoji-animaton-mode: ease-in-out;
+  --emoji-animation-iteration-count: infinite;
 }
 .emoji-face {
-    position: relative;
-    transform: translateX(0) rotate(0);
-    animation: emoji-face var(--emoji-animaton-duration) var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards  ;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  -webkit-transform: translateX(0) rotate(0);
+  -ms-transform: translateX(0) rotate(0);
+  transform: translateX(0) rotate(0);
+  -webkit-animation: emoji-face var(--emoji-animaton-duration)
+    var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards;
+  animation: emoji-face var(--emoji-animaton-duration)
+    var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards;
+  width: 100%;
+  height: 100%;
 }
 .emoji-eyes {
-    position: absolute;
-    width: calc(var(--emoji-size) * .64);
-    height: var(--emoji-eye-size);
-    top: calc(var(--emoji-size) * .2);
-    left: calc(var(--emoji-size) * .18);
-    display: flex;
-    justify-content: space-between;
+  position: absolute;
+  width: calc(var(--emoji-size) * 0.64);
+  height: var(--emoji-eye-size);
+  top: calc(var(--emoji-size) * 0.2);
+  left: calc(var(--emoji-size) * 0.18);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 
-    --emoji-eye-size: calc(var(--emoji-size)  * .25);
-} 
+  --emoji-eye-size: calc(var(--emoji-size) * 0.25);
+}
 .eye {
-    height: var(--emoji-eye-size);
-    width: var(--emoji-eye-size);
-    background-color: white;
-    border-radius: 50%;
-    border: calc(var(--emoji-eye-size) * .03) solid black ;
-    transform: translateX(0px) rotate(0);
+  height: var(--emoji-eye-size);
+  width: var(--emoji-eye-size);
+  background-color: white;
+  border-radius: 50%;
+  border: calc(var(--emoji-eye-size) * 0.03) solid black;
+  -webkit-transform: translateX(0px) rotate(0);
+  -ms-transform: translateX(0px) rotate(0);
+  transform: translateX(0px) rotate(0);
 
-    --emoji-pupil-size:  calc(var(--emoji-eye-size) * .4);
+  --emoji-pupil-size: calc(var(--emoji-eye-size) * 0.4);
 }
 .eye-pupil {
-    --emoji-pupil-offset: calc(calc(var(--emoji-eye-size)  - var(--emoji-pupil-size)) / 2);;
-    width: calc(var(--emoji-eye-size) * .4);
-    height: calc(var(--emoji-eye-size) * .4);
-    background-color: black;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;  
-    left: 50%;
-    transform: scale(1) translate(-50%,-50%);  
-    animation: emoji-pupils var(--emoji-animaton-duration) var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards ;
+  --emoji-pupil-offset: calc(
+    calc(var(--emoji-eye-size) - var(--emoji-pupil-size)) / 2
+  );
+  width: calc(var(--emoji-eye-size) * 0.4);
+  height: calc(var(--emoji-eye-size) * 0.4);
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(1) translate(-50%, -50%);
+  -ms-transform: scale(1) translate(-50%, -50%);
+  transform: scale(1) translate(-50%, -50%);
+  -webkit-animation: emoji-pupils var(--emoji-animaton-duration)
+    var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards;
+  animation: emoji-pupils var(--emoji-animaton-duration)
+    var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards;
 }
 
 .emoji-mouth {
-    --emoji-mouth-width: calc(var(--emoji-size) * .3);
-    background-color: black;
-    width: var(--emoji-mouth-width);
-    height: calc(var(--emoji-mouth-width) * .4);       
-    bottom: calc(var(--emoji-size) * .22);
-    left: calc(calc(var(--emoji-size) - var(--emoji-mouth-width)) / 2);
-    position: absolute;
-    animation: emoji-mouth var(--emoji-animaton-duration) var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards ;
-    border-radius: 50%;
+  --emoji-mouth-width: calc(var(--emoji-size) * 0.3);
+  background-color: black;
+  width: var(--emoji-mouth-width);
+  height: calc(var(--emoji-mouth-width) * 0.4);
+  bottom: calc(var(--emoji-size) * 0.22);
+  left: calc(calc(var(--emoji-size) - var(--emoji-mouth-width)) / 2);
+  position: absolute;
+  -webkit-animation: emoji-mouth var(--emoji-animaton-duration)
+    var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards;
+  animation: emoji-mouth var(--emoji-animaton-duration)
+    var(--emoji-animaton-mode) var(--emoji-animation-iteration-count) forwards;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes emoji-face {
+  0% {
+    -webkit-transform: translateX(0) rotate(0);
+    transform: translateX(0) rotate(0);
+  }
+  25% {
+    -webkit-transform: translateX(calc(var(--emoji-size) * -0.05)) rotate(-3deg);
+    transform: translateX(calc(var(--emoji-size) * -0.05)) rotate(-3deg);
+  }
+  75% {
+    -webkit-transform: translateX(calc(var(--emoji-size) * 0.05)) rotate(3deg);
+    transform: translateX(calc(var(--emoji-size) * 0.05)) rotate(3deg);
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0);
+    transform: translateX(0) rotate(0);
+  }
 }
 
 @keyframes emoji-face {
-    0% {
-        transform: translateX(0) rotate(0);
-    }
-    25% {
-        transform: translateX(calc(var(--emoji-size) * -0.05)) rotate(-3deg);
-    }
-    75% {
-        transform: translateX(calc(var(--emoji-size) * 0.05)) rotate(3deg);
-    }
-    100% {
-        transform: translateX(0) rotate(0);
-    }
- }
+  0% {
+    -webkit-transform: translateX(0) rotate(0);
+    transform: translateX(0) rotate(0);
+  }
+  25% {
+    -webkit-transform: translateX(calc(var(--emoji-size) * -0.05)) rotate(-3deg);
+    transform: translateX(calc(var(--emoji-size) * -0.05)) rotate(-3deg);
+  }
+  75% {
+    -webkit-transform: translateX(calc(var(--emoji-size) * 0.05)) rotate(3deg);
+    transform: translateX(calc(var(--emoji-size) * 0.05)) rotate(3deg);
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0);
+    transform: translateX(0) rotate(0);
+  }
+}
+@-webkit-keyframes emoji-pupils {
+  0% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+    transform: scale(1) translate(-50%, -50%);
+  }
+  25% {
+    -webkit-transform: scale(1.15) translate(-75%, -50%);
+    transform: scale(1.15) translate(-75%, -50%);
+  }
+  50% {
+    -webkit-transform: scale(1.07) translate(-50%, -50%);
+    transform: scale(1.07) translate(-50%, -50%);
+  }
+  75% {
+    -webkit-transform: scale(1.15) translate(-25%, -50%);
+    transform: scale(1.15) translate(-25%, -50%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
 @keyframes emoji-pupils {
-    0% {
-        transform: scale(1) translate(-50%,-50%);
-    }
-    25% {
-        transform: scale(1.15) translate(-75%,-50%);
-    }
-    50%{
-        transform: scale(1.07) translate(-50%,-50%);
-    }
-    75% {
-        transform: scale(1.15) translate(-25%,-50%);
-    }
-    100% {
-        transform: scale(1) translate(-50%,-50%);
-    }  
-}  
+  0% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+    transform: scale(1) translate(-50%, -50%);
+  }
+  25% {
+    -webkit-transform: scale(1.15) translate(-75%, -50%);
+    transform: scale(1.15) translate(-75%, -50%);
+  }
+  50% {
+    -webkit-transform: scale(1.07) translate(-50%, -50%);
+    transform: scale(1.07) translate(-50%, -50%);
+  }
+  75% {
+    -webkit-transform: scale(1.15) translate(-25%, -50%);
+    transform: scale(1.15) translate(-25%, -50%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+@-webkit-keyframes emoji-mouth {
+  0% {
+    width: var(--emoji-mouth-width);
+    left: calc(calc(var(--emoji-size) - var(--emoji-mouth-width)) / 2);
+    height: calc(var(--emoji-mouth-width) * 0.4);
+  }
+  30% {
+    width: calc(var(--emoji-mouth-width) * 0.4);
+    left: calc(
+      calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * 0.4)) / 2
+    );
+    height: calc(var(--emoji-mouth-width) * 0.5);
+  }
+  30% {
+    width: calc(var(--emoji-mouth-width) * 0.55);
+    left: calc(
+      calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * 0.55)) / 2
+    );
+    height: calc(var(--emoji-mouth-width) * 0.6);
+  }
+  70% {
+    width: calc(var(--emoji-mouth-width) * 0.7);
+    left: calc(
+      calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * 0.7)) / 2
+    );
+    height: calc(var(--emoji-mouth-width) * 0.5);
+  }
+  100% {
+    width: var(--emoji-mouth-width);
+    left: calc(calc(var(--emoji-size) - var(--emoji-mouth-width)) / 2);
+    height: calc(var(--emoji-mouth-width) * 0.4);
+  }
+}
 @keyframes emoji-mouth {
-    0%{
-        width:var(--emoji-mouth-width); 
-        left: calc(calc(var(--emoji-size) - var(--emoji-mouth-width)) / 2);
-        height: calc(var(--emoji-mouth-width) * .4);        
-    }
-    30% {
-        width: calc(var(--emoji-mouth-width) * .4); 
-        left: calc(calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * .4)) / 2);
-        height: calc(var(--emoji-mouth-width) * .5);
-    }
-    30% {
-        width: calc(var(--emoji-mouth-width) * .55); 
-        left: calc(calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * .55)) / 2);
-        height: calc(var(--emoji-mouth-width) * .6);
-    }
-    70%{
-        width: calc(var(--emoji-mouth-width) * .7); 
-        left: calc(calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * .7)) / 2);
-        height: calc(var(--emoji-mouth-width) * .5);
-    }
-    100%{
-        width:var(--emoji-mouth-width); 
-        left: calc(calc(var(--emoji-size) - var(--emoji-mouth-width)) / 2);
-        height: calc(var(--emoji-mouth-width) * .4);
-    }
+  0% {
+    width: var(--emoji-mouth-width);
+    left: calc(calc(var(--emoji-size) - var(--emoji-mouth-width)) / 2);
+    height: calc(var(--emoji-mouth-width) * 0.4);
+  }
+  30% {
+    width: calc(var(--emoji-mouth-width) * 0.4);
+    left: calc(
+      calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * 0.4)) / 2
+    );
+    height: calc(var(--emoji-mouth-width) * 0.5);
+  }
+  30% {
+    width: calc(var(--emoji-mouth-width) * 0.55);
+    left: calc(
+      calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * 0.55)) / 2
+    );
+    height: calc(var(--emoji-mouth-width) * 0.6);
+  }
+  70% {
+    width: calc(var(--emoji-mouth-width) * 0.7);
+    left: calc(
+      calc(var(--emoji-size) - calc(var(--emoji-mouth-width) * 0.7)) / 2
+    );
+    height: calc(var(--emoji-mouth-width) * 0.5);
+  }
+  100% {
+    width: var(--emoji-mouth-width);
+    left: calc(calc(var(--emoji-size) - var(--emoji-mouth-width)) / 2);
+    height: calc(var(--emoji-mouth-width) * 0.4);
+  }
+}
+@-webkit-keyframes emoji-rotate {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    -webkit-box-shadow: 0 0 calc(var(--emoji-size) * 0.1)
+      calc(var(--emoji-size) * 0.05) rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 calc(var(--emoji-size) * 0.1) calc(var(--emoji-size) * 0.05)
+      rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    -webkit-transform: rotate(auto) scale(1.5);
+    transform: rotate(auto) scale(1.5);
+    -webkit-box-shadow: 0 0 calc(var(--emoji-size) * 0.12)
+      calc(var(--emoji-size) * 0.06) rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 calc(var(--emoji-size) * 0.12)
+      calc(var(--emoji-size) * 0.06) rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+    -webkit-box-shadow: 0 0 calc(var(--emoji-size) * 0.1)
+      calc(var(--emoji-size) * 0.05) rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 calc(var(--emoji-size) * 0.1) calc(var(--emoji-size) * 0.05)
+      rgba(0, 0, 0, 0.6);
+  }
 }
 @keyframes emoji-rotate {
-    0% {
-        transform: rotate(0) scale(1);
-        box-shadow: 0 0 calc(var(--emoji-size) * .1) calc(var(--emoji-size) * .05) rgba(0, 0, 0, 0.6);
-    }
-    50% {
-        transform: rotate(auto)  scale(1.5);
-        box-shadow: 0 0 calc(var(--emoji-size) * .12) calc(var(--emoji-size) * .06) rgba(0, 0, 0, 0.6);    
-    }
-    100% {
-        transform: rotate(360deg) scale(1);
-        box-shadow: 0 0 calc(var(--emoji-size) * .1) calc(var(--emoji-size) * .05) rgba(0, 0, 0, 0.6);
-    }
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    -webkit-box-shadow: 0 0 calc(var(--emoji-size) * 0.1)
+      calc(var(--emoji-size) * 0.05) rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 calc(var(--emoji-size) * 0.1) calc(var(--emoji-size) * 0.05)
+      rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    -webkit-transform: rotate(auto) scale(1.5);
+    transform: rotate(auto) scale(1.5);
+    -webkit-box-shadow: 0 0 calc(var(--emoji-size) * 0.12)
+      calc(var(--emoji-size) * 0.06) rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 calc(var(--emoji-size) * 0.12)
+      calc(var(--emoji-size) * 0.06) rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+    -webkit-box-shadow: 0 0 calc(var(--emoji-size) * 0.1)
+      calc(var(--emoji-size) * 0.05) rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 calc(var(--emoji-size) * 0.1) calc(var(--emoji-size) * 0.05)
+      rgba(0, 0, 0, 0.6);
+  }
 }
